@@ -1,0 +1,9 @@
+Big thanks to :
+WoWDaemon (C#) Team :
+Codemonkey, Foole, Tharaxis and Benjou
+
+WoWDaemon, it was the first open-source project server started by Codemonkey. Its developers were the most talented on the WoW scene.
+
+
+Source :
+https://spacetrail.cc/files/wow/WoWEmulationBeta.pdf 
