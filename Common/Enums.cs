@@ -54,6 +54,10 @@ namespace WoWDaemon.Common
 		CAST_SPELL = 0x0121,
 		CANCEL_CAST = 0x0122,
         CANCEL_AURA = 0x0129,
+        //who list
+		WHO = 0x0062,
+		WHOIS = 0x0064,
+		RWHOIS  = 0x01EE,
 
 		STANDSTATECHANGED = 0xF4,
 		EMOTE = 0x00F5,
@@ -131,6 +135,10 @@ namespace WoWDaemon.Common
         UPDATE_AURA_DURATION = 0x012A,
         PET_CAST_FAILED = 0x012B,
 		SPELLNONMELEEDAMAGELOG = 0x024E, //test from 0.8 beta
+        //who list
+		WHO = 0x0063,
+		WHOIS = 0x0065,
+        RWHOIS  = 0x01EF,
 
 		TUTORIAL_FLAGS = 0x00F0,
 		EMOTE = 0x00F6,

@@ -136,7 +136,33 @@ namespace WoWDaemon.Login
 			while(e.MoveNext())
 				((LoginClient)e.Current).Send(pkg);
 		}
-		
+
+        public static void SendWhoList(LoginClient whoClient)
+        {
+            BinWriter pkg = LoginClient.NewPacket(SMSG.WHO);
+            pkg.Write((int)Instance.ClientCount);
+            pkg.Write((int)Instance.ClientCount);
+            IEnumerator e = Instance.Clients.GetEnumerator();
+            //			int Group = 0; // 0 = No, 1 = Yes
+            while (e.MoveNext())
+            {
+                try
+                {
+                    pkg.Write((string)((LoginClient)e.Current).Character.Name);
+                    //pkg.Write((string)((LoginClient)e.Current).Character.GuildName); //temp disabled
+                    pkg.Write((int)((LoginClient)e.Current).Character.Level);
+                    pkg.Write((int)((LoginClient)e.Current).Character.Class);
+                    pkg.Write((int)((LoginClient)e.Current).Character.Race);
+                    pkg.Write((int)((LoginClient)e.Current).Character.Zone);
+                    //pkg.Write((int)((LoginClient)e.Current).Character.GroupLook); //temp disabled
+                }
+                catch (Exception)
+                {
+                }
+            }
+            whoClient.Send(pkg);
+        }
+
 		public static LoginClient GetLoginClientByCharacterID(uint id)
 		{
 			return (LoginClient)m_loginCharacters[id];
